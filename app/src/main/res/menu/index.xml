@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/btna"
+    >
     <item
         android:id="@+id/vitantesmenu"
         android:orderInCategory="100"
+        style="@style/btna"
         android:title="Agregar Incubadora"
         android:textColor="@color/white"
         app:showAsAction="never" />
@@ -18,6 +21,7 @@
         android:id="@+id/cerrarsesionmenu"
         android:orderInCategory="100"
         android:title="Cerrar Sesion"
+
         android:textColor="@color/white"
         app:showAsAction="never" />
 </menu>

@@ -18,7 +18,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.example.incubadora.datos.SingletonRequest;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
-
+import com.example.incubadora.modelos.usersres;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -27,11 +27,13 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.incubadora.databinding.ActivityIndexBinding;
+import com.google.gson.Gson;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.w3c.dom.Text;
 
+import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -42,10 +44,14 @@ public class index extends AppCompatActivity {
     SharedPreferences preferences;
     SharedPreferences.Editor editor;
     TextView men;
-
+    String  token;
+    TextView name;
+    TextView email;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        user();
 
         binding = ActivityIndexBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -53,9 +59,11 @@ public class index extends AppCompatActivity {
         editor = preferences.edit();
         setSupportActionBar(binding.appBarIndex.toolbar);
         men=(TextView) findViewById(R.id.token);
+        name=(TextView) findViewById(R.id.nameuser);
+        email=(TextView) findViewById(R.id.correouser);
         Bundle mibun=this.getIntent().getExtras();
         if(mibun!=null) {
-          String  token = mibun.getString("token");
+          token = mibun.getString("token");
           editor.putString("token",token);
             men.setText(token);
         }
@@ -137,4 +145,37 @@ public class index extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), com.example.incubadora.agregarvisi.class);
         startActivity(intent);
     }
+
+    private void user() {
+        String url = "https://escenario.space/api/v1/user/info";
+
+        Intent intent = new Intent(getApplicationContext(), com.example.incubadora.visi.class);
+        JsonObjectRequest carta = new JsonObjectRequest(Request.Method.GET, url, null,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        Gson gson = new Gson();
+                        usersres num = gson.fromJson(String.valueOf(response), (Type) usersres.class);
+                        name.setText("" + num.getName());
+                        email.setText("" + num.getEmail());
+
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_SHORT).show();
+            }
+        }){
+            @Override           //PARA PONER ESTO SE ESCRIBE    getHeaders
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                HashMap<String, String> headers = new HashMap<String, String>();
+                headers.put("Authorization", "Bearer " + token);
+                return headers;
+            }};
+        SingletonRequest.getInstance(this).addToRequestQue(carta);
+    }
+
+
+
+
 }
