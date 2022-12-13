@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/azene/AndroidStudioProjects/Incubadora/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1425" />
+        <entry key="..\:/Users/azene/AndroidStudioProjects/Incubadora/app/src/main/res/drawable/fondoss.xml" value="0.2245" />
+        <entry key="..\:/Users/azene/AndroidStudioProjects/Incubadora/app/src/main/res/drawable/gradiendt.xml" value="0.194" />
+        <entry key="..\:/Users/azene/AndroidStudioProjects/Incubadora/app/src/main/res/drawable/gradiendt__1_.xml" value="0.2245" />
+        <entry key="..\:/Users/azene/AndroidStudioProjects/Incubadora/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1425" />
+        <entry key="..\:/Users/azene/AndroidStudioProjects/Incubadora/app/src/main/res/drawable/side_nav_bar.xml" value="0.1425" />
+        <entry key="..\:/Users/azene/AndroidStudioProjects/Incubadora/app/src/main/res/layout/activity_agregarincu.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/azene/AndroidStudioProjects/Incubadora/app/src/main/res/layout/activity_agregarvisi.xml" value="0.21875" />
+        <entry key="..\:/Users/azene/AndroidStudioProjects/Incubadora/app/src/main/res/layout/activity_index.xml" value="0.2125" />
+        <entry key="..\:/Users/azene/AndroidStudioProjects/Incubadora/app/src/main/res/layout/activity_inicio.xml" value="0.176" />
+        <entry key="..\:/Users/azene/AndroidStudioProjects/Incubadora/app/src/main/res/layout/activity_login.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/azene/AndroidStudioProjects/Incubadora/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/azene/AndroidStudioProjects/Incubadora/app/src/main/res/layout/activity_registro.xml" value="0.264" />
+        <entry key="..\:/Users/azene/AndroidStudioProjects/Incubadora/app/src/main/res/layout/activity_sensores.xml" value="0.264" />
+        <entry key="..\:/Users/azene/AndroidStudioProjects/Incubadora/app/src/main/res/layout/activity_temperatura.xml" value="0.264945652173913" />
+        <entry key="..\:/Users/azene/AndroidStudioProjects/Incubadora/app/src/main/res/layout/activity_visi.xml" value="0.22395833333333334" />
+        <entry key="..\:/Users/azene/AndroidStudioProjects/Incubadora/app/src/main/res/layout/app_bar_index.xml" value="0.2125" />
+        <entry key="..\:/Users/azene/AndroidStudioProjects/Incubadora/app/src/main/res/layout/app_bar_inicio.xml" value="0.128" />
+        <entry key="..\:/Users/azene/AndroidStudioProjects/Incubadora/app/src/main/res/layout/content_index.xml" value="0.1984375" />
+        <entry key="..\:/Users/azene/AndroidStudioProjects/Incubadora/app/src/main/res/layout/content_inicio.xml" value="0.10400000000000001" />
+        <entry key="..\:/Users/azene/AndroidStudioProjects/Incubadora/app/src/main/res/layout/dondoss.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/azene/AndroidStudioProjects/Incubadora/app/src/main/res/layout/fondo.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/azene/AndroidStudioProjects/Incubadora/app/src/main/res/layout/fragment_gallery.xml" value="0.144" />
+        <entry key="..\:/Users/azene/AndroidStudioProjects/Incubadora/app/src/main/res/layout/fragment_home.xml" value="0.176" />
+        <entry key="..\:/Users/azene/AndroidStudioProjects/Incubadora/app/src/main/res/layout/fragment_slideshow.xml" value="0.2" />
+        <entry key="..\:/Users/azene/AndroidStudioProjects/Incubadora/app/src/main/res/layout/gradiendt.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/azene/AndroidStudioProjects/Incubadora/app/src/main/res/layout/incuvadoras.xml" value="0.264" />
+        <entry key="..\:/Users/azene/AndroidStudioProjects/Incubadora/app/src/main/res/layout/nav_header_index.xml" value="0.2125" />
+        <entry key="..\:/Users/azene/AndroidStudioProjects/Incubadora/app/src/main/res/layout/nav_header_inicio.xml" value="0.2" />
+        <entry key="..\:/Users/azene/AndroidStudioProjects/Incubadora/app/src/main/res/layout/visitantes.xml" value="0.17447916666666666" />
+        <entry key="..\:/Users/azene/AndroidStudioProjects/Incubadora/app/src/main/res/menu/activity_index_drawer.xml" value="0.2125" />
+        <entry key="..\:/Users/azene/AndroidStudioProjects/Incubadora/app/src/main/res/menu/activity_main_drawer.xml" value="0.536" />
+        <entry key="..\:/Users/azene/AndroidStudioProjects/Incubadora/app/src/main/res/menu/index.xml" value="0.2125" />
+        <entry key="..\:/Users/azene/AndroidStudioProjects/Incubadora/app/src/main/res/menu/inicio.xml" value="0.176" />
+        <entry key="..\:/Users/azene/AndroidStudioProjects/Incubadora/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.184" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
