@@ -46,7 +46,7 @@ public class agregarvisi extends AppCompatActivity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        Intent intent = new Intent(getApplicationContext(), com.example.incubadora.visi.class);
+        Intent intent = new Intent(getApplicationContext(), com.example.incubadora.index.class);
         JsonObjectRequest carta = new JsonObjectRequest(Request.Method.POST, url, jo,
                 new Response.Listener<JSONObject>() {
                     @Override
@@ -63,7 +63,7 @@ public class agregarvisi extends AppCompatActivity {
             @Override           //PARA PONER ESTO SE ESCRIBE    getHeaders
             public Map<String, String> getHeaders() throws AuthFailureError {
                 HashMap<String, String> headers = new HashMap<String, String>();
-                headers.put("Authorization", "Bearer " + token);
+                headers.put("Authorization", "Bearer 37|3DfZQBZ14G9lbaqDb2rviI9yeyGW63gXejNSjoUQ");
                 return headers;
             }};
         SingletonRequest.getInstance(this).addToRequestQue(carta);
@@ -71,15 +71,15 @@ public class agregarvisi extends AppCompatActivity {
     private void eliminar(View view) {
         String url = "https://escenario.space/api/v1/incubator/removeVi";
         JSONObject jo = new JSONObject();
-        String token= "2|JenzAKkK0zL1zalaedYSUtghjfpradoyfpBK9Mom";
         try {
             jo.put("code","" + code.getText());
             jo.put("email","" +  email.getText());
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        Intent intent = new Intent(getApplicationContext(), com.example.incubadora.visi.class);
-        JsonObjectRequest carta = new JsonObjectRequest(Request.Method.DELETE, url, jo,
+
+        Intent intent = new Intent(getApplicationContext(), com.example.incubadora.index.class);
+        JsonObjectRequest carta = new JsonObjectRequest(Request.Method.POST, url, jo,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
@@ -95,12 +95,11 @@ public class agregarvisi extends AppCompatActivity {
             @Override           //PARA PONER ESTO SE ESCRIBE    getHeaders
             public Map<String, String> getHeaders() throws AuthFailureError {
                 HashMap<String, String> headers = new HashMap<String, String>();
-                headers.put("Authorization", "Bearer " + token);
+                headers.put("Authorization", "Bearer 37|3DfZQBZ14G9lbaqDb2rviI9yeyGW63gXejNSjoUQ");
                 return headers;
             }};
         SingletonRequest.getInstance(this).addToRequestQue(carta);
     }
-
 
 
 }

@@ -34,7 +34,6 @@ public class agregarincu extends AppCompatActivity {
         setContentView(R.layout.activity_agregarincu);
         Queue = SingletonRequest.getInstance(agregarincu.this).getRequestQueue();
         findViewById(R.id.botonincuagregar).setOnClickListener(this::registrar);
-        findViewById(R.id.botonincueliminar).setOnClickListener(this::eliminar);
         code = findViewById(R.id.codigoincu);
         name = findViewById(R.id.nameincu);
 
@@ -73,31 +72,5 @@ public class agregarincu extends AppCompatActivity {
 
     }
 
-    private void eliminar(View view) {
-        String url = "https://escenario.space/api/v1/incubator/delete";
-        JSONObject jo = new JSONObject();
-        String token= "2|JenzAKkK0zL1zalaedYSUtghjfpradoyfpBK9Mom";
 
-        Intent intent = new Intent(getApplicationContext(), com.example.incubadora.visi.class);
-        JsonObjectRequest carta = new JsonObjectRequest(Request.Method.DELETE, url, null,
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        Toast.makeText(getApplicationContext(), response.toString(), Toast.LENGTH_SHORT).show();
-                        startActivity(intent);
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_SHORT).show();
-            }
-        }){
-            @Override           //PARA PONER ESTO SE ESCRIBE    getHeaders
-            public Map<String, String> getHeaders() throws AuthFailureError {
-                HashMap<String, String> headers = new HashMap<String, String>();
-                headers.put("Authorization", "Bearer " + token);
-                return headers;
-            }};
-        SingletonRequest.getInstance(this).addToRequestQue(carta);
-    }
 }

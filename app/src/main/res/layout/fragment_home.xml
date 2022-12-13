@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/hola"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Incubadoras"
@@ -31,12 +31,13 @@
         app:layout_constraintVertical_bias="0.849" />
 
     <TextView
-        android:id="@+id/token"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:text="token"
+        android:id="@+id/textView2"
+        android:layout_width="103dp"
+        android:layout_height="24dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/incuadmin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

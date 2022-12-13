@@ -62,31 +62,16 @@
 
     <Button
         android:id="@+id/botonincuagregar"
-        android:layout_width="358dp"
-        android:layout_height="65dp"
-
-        android:layout_marginBottom="16dp"
         style="@style/btna"
+        android:layout_width="358dp"
+
+        android:layout_height="65dp"
         android:text="Agregar"
         android:textColor="@color/black"
         app:cornerRadius="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/botonincueliminar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.566"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/botonincueliminar"
-        android:layout_width="358dp"
-        android:layout_height="65dp"
-        android:textColor="@color/white"
-        android:layout_marginBottom="108dp"
-        style="@style/BTN"
-        android:text="eliminar"
-        app:cornerRadius="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.566"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="477dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

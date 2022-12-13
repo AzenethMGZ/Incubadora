@@ -53,16 +53,16 @@ public class index extends AppCompatActivity {
     private ActivityIndexBinding binding;
     SharedPreferences preferences;
     SharedPreferences.Editor editor;
-    TextView men;
     String  token;
     TextView name;
     TextView email;
-
+    TextView men;
     adaptadormiincu adapter;
     List<response> data;
     List<datarespnse> incu;
     List<incubadora> namein;
     List<incubadora> code;
+
     private RequestQueue mQueue;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,10 +74,16 @@ public class index extends AppCompatActivity {
         preferences = this.getSharedPreferences("sesiones", Context.MODE_PRIVATE);
         editor = preferences.edit();
         setSupportActionBar(binding.appBarIndex.toolbar);
-        men=(TextView) findViewById(R.id.token);
         name=(TextView) findViewById(R.id.nameuser);
         email=(TextView) findViewById(R.id.correouser);
+        men=(TextView) findViewById(R.id.hola);
         Bundle mibun=this.getIntent().getExtras();
+        if(mibun!=null){
+            token = mibun.getString("token");
+            email.setText("" + token);
+
+        }
+
         editor.putString("token",token);
         editor.commit();
         data = new ArrayList<>();
@@ -127,6 +133,7 @@ public class index extends AppCompatActivity {
                         public void onResponse(JSONObject response) {
                             Toast.makeText(getApplicationContext(), response.toString(), Toast.LENGTH_SHORT).show();
                             startActivity(intent2);
+
                         }
                     }, new Response.ErrorListener() {
                 @Override
@@ -200,7 +207,6 @@ public class index extends AppCompatActivity {
                 recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
                 Gson gson = new Gson();
                 response in = gson.fromJson(response.toString(), response.class);
-                adapter = new adaptadormiincu(in.getData());
                 recyclerView.setAdapter(adapter);
             }
         }, new Response.ErrorListener() {
@@ -209,7 +215,7 @@ public class index extends AppCompatActivity {
                 error.printStackTrace();
             }
         });
-        Queue.add(request);
+        SingletonRequest.getInstance(this).addToRequestQue(request);
     }
 
 
