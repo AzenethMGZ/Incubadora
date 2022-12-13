@@ -12,19 +12,26 @@ import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
+import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.example.incubadora.datos.SingletonRequest;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
+import com.example.incubadora.modelos.incubadora;
 import com.example.incubadora.modelos.usersres;
+import com.example.incubadora.modelos.response;
+import com.example.incubadora.modelos.adaptadormiincu;
+import com.example.incubadora.modelos.datarespnse;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.incubadora.databinding.ActivityIndexBinding;
 import com.google.gson.Gson;
@@ -34,8 +41,11 @@ import org.json.JSONObject;
 import org.w3c.dom.Text;
 
 import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.Queue;
 
 public class index extends AppCompatActivity {
 
@@ -47,12 +57,18 @@ public class index extends AppCompatActivity {
     String  token;
     TextView name;
     TextView email;
+
+    adaptadormiincu adapter;
+    List<response> data;
+    List<datarespnse> incu;
+    List<incubadora> namein;
+    List<incubadora> code;
+    private RequestQueue mQueue;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         user();
-
+        mQueue = SingletonRequest.getInstance(index.this).getRequestQueue();
         binding = ActivityIndexBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         preferences = this.getSharedPreferences("sesiones", Context.MODE_PRIVATE);
@@ -62,12 +78,12 @@ public class index extends AppCompatActivity {
         name=(TextView) findViewById(R.id.nameuser);
         email=(TextView) findViewById(R.id.correouser);
         Bundle mibun=this.getIntent().getExtras();
-        if(mibun!=null) {
-          token = mibun.getString("token");
-          editor.putString("token",token);
-            men.setText(token);
-        }
-
+        editor.putString("token",token);
+        editor.commit();
+        data = new ArrayList<>();
+        incu = new ArrayList<>();
+        code = new ArrayList<>();
+        namein = new ArrayList<>();
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
         // Passing each menu ID as a set of Ids because each
@@ -103,7 +119,6 @@ public class index extends AppCompatActivity {
             Intent intent = new Intent(getApplicationContext(), com.example.incubadora.MainActivity.class);
             startActivity(intent);
             String url = "https://escenario.space/api/v1/user/logOut";
-            String token= "2|JenzAKkK0zL1zalaedYSUtghjfpradoyfpBK9Mom";
 
             Intent intent2 = new Intent(getApplicationContext(), com.example.incubadora.MainActivity.class);
             JsonObjectRequest carta = new JsonObjectRequest(Request.Method.DELETE, url,null,
@@ -176,6 +191,26 @@ public class index extends AppCompatActivity {
     }
 
 
+    public void ganadores() {
+        String urlApi = "https://ramiro.uttics.com/api/ganadores";
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, urlApi, null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                RecyclerView recyclerView = findViewById(R.id.incuadmin);
+                recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+                Gson gson = new Gson();
+                response in = gson.fromJson(response.toString(), response.class);
+                adapter = new adaptadormiincu(in.getData());
+                recyclerView.setAdapter(adapter);
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                error.printStackTrace();
+            }
+        });
+        Queue.add(request);
+    }
 
 
 }
