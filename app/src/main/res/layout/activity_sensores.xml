@@ -4,4 +4,80 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".sensores"/>
+    tools:context=".sensores">
+
+    <TextView
+        android:id="@+id/Temperatura"
+        android:layout_width="200px"
+        android:layout_height="150px"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="00"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:textIsSelectable="false"
+        android:textSize="125px"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.295"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.172" />
+
+    <TextView
+        android:id="@+id/SensorPueta"
+        android:layout_width="200px"
+        android:layout_height="150px"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="00"
+        android:textAlignment="center"
+        android:textIsSelectable="false"
+        android:textSize="125px"
+        android:gravity="center"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.295"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.292" />
+
+    <TextView
+        android:id="@+id/Humedad"
+        android:layout_width="200px"
+        android:layout_height="150px"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="00"
+        android:textAlignment="center"
+        android:textIsSelectable="false"
+        android:textSize="125px"
+        android:gravity="center"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.731"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.172"
+        />
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="200px"
+        android:layout_height="150px"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="00"
+        android:textAlignment="center"
+        android:textIsSelectable="false"
+        android:textSize="125px"
+        android:gravity="center"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.731"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.292" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
